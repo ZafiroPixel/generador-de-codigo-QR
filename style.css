@@ -1,0 +1,222 @@
+/* Estilos Generales - Paleta Plateado y Naranja Elegante */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.app-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header superior */
+.main-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #fcf9f7 100%);
+    border-bottom: 3px solid #f39c12;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.header-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2);
+}
+
+.main-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #34495e;
+    margin: 0;
+    letter-spacing: -0.5px;
+    border-left: 2px solid #e67e22;
+    padding-left: 20px;
+}
+
+/* Contenido a dos columnas */
+.content-row {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.qr-column {
+    flex: 1 1 60%;
+    min-width: 300px;
+}
+
+.ads-column {
+    flex: 1 1 35%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tarjeta del generador (plateado elegante) */
+.qr-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border: 1px solid #f1f3f5;
+    transition: all 0.3s ease;
+}
+
+.qr-card:hover {
+    box-shadow: 0 20px 40px rgba(230, 126, 34, 0.08);
+    border-color: #ffe4cc;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Campos de entrada */
+input[type="text"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid #edf2f7;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background: #fefefe;
+    box-sizing: border-box;
+    color: #2d3e50;
+}
+
+input[type="text"]:focus {
+    border-color: #f39c12;
+    box-shadow: 0 0 0 4px rgba(243, 156, 18, 0.1);
+    outline: none;
+    background: white;
+}
+
+/* Botones con acento naranja */
+.btn-primary, .btn-download {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(145deg, #f39c12, #e67e22);
+    color: white;
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(145deg, #e67e22, #d35400);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
+}
+
+.btn-download {
+    background: white;
+    color: #e67e22;
+    border: 2px solid #f39c12;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.btn-download:hover {
+    background: #fff5eb;
+    border-color: #e67e22;
+    transform: translateY(-2px);
+}
+
+/* Contenedor QR */
+#qrcode {
+    margin: 30px 0 20px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: #fefcfb;
+    border-radius: 16px;
+    border: 1px dashed #f1c40f;
+}
+
+/* Mensajes de error elegantes */
+.error-message {
+    color: #c0392b;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    padding: 10px;
+    background: #fef5f5;
+    border-radius: 8px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Contenedores de anuncios */
+.ad-container {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid #ffe6d5;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+}
+
+.ad-container iframe {
+    border-radius: 12px;
+    max-width: 100%;
+}
+
+/* Footer */
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    padding: 25px;
+    color: #95a5a6;
+    border-top: 1px solid #f1f3f5;
+    font-size: 0.9rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .content-row {
+        flex-direction: column;
+    }
+    
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-header h1 {
+        border-left: none;
+        padding-left: 0;
+        border-top: 2px solid #e67e22;
+        padding-top: 15px;
+    }
+}
