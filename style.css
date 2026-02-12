@@ -1,4 +1,4 @@
-/* Estilos Generales - Paleta Plateado y Naranja Elegante */
+/* Estilos Generales - Paleta Plateado y Azul Elegante (#685AFF) */
 body {
     margin: 0;
     padding: 0;
@@ -20,8 +20,8 @@ body {
     align-items: center;
     gap: 20px;
     padding: 20px 30px;
-    background: linear-gradient(135deg, #ffffff 0%, #fcf9f7 100%);
-    border-bottom: 3px solid #f39c12;
+    background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+    border-bottom: 3px solid #685AFF;
     border-radius: 20px 20px 0 0;
     margin-bottom: 30px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
@@ -31,7 +31,7 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2);
+    box-shadow: 0 4px 10px rgba(104, 90, 255, 0.2);
 }
 
 .main-header h1 {
@@ -40,7 +40,7 @@ body {
     color: #34495e;
     margin: 0;
     letter-spacing: -0.5px;
-    border-left: 2px solid #e67e22;
+    border-left: 2px solid #685AFF;
     padding-left: 20px;
 }
 
@@ -75,8 +75,8 @@ body {
 }
 
 .qr-card:hover {
-    box-shadow: 0 20px 40px rgba(230, 126, 34, 0.08);
-    border-color: #ffe4cc;
+    box-shadow: 0 20px 40px rgba(104, 90, 255, 0.08);
+    border-color: #e0e0ff;
 }
 
 .subtitle {
@@ -100,13 +100,13 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-    border-color: #f39c12;
-    box-shadow: 0 0 0 4px rgba(243, 156, 18, 0.1);
+    border-color: #685AFF;
+    box-shadow: 0 0 0 4px rgba(104, 90, 255, 0.1);
     outline: none;
     background: white;
 }
 
-/* Botones con acento naranja */
+/* Botones con acento azul */
 .btn-primary, .btn-download {
     width: 100%;
     padding: 14px 20px;
@@ -124,27 +124,27 @@ input[type="text"]:focus {
 }
 
 .btn-primary {
-    background: linear-gradient(145deg, #f39c12, #e67e22);
+    background: linear-gradient(145deg, #685AFF, #5a4be0);
     color: white;
-    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+    box-shadow: 0 5px 15px rgba(104, 90, 255, 0.3);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(145deg, #e67e22, #d35400);
+    background: linear-gradient(145deg, #5a4be0, #4a3cc0);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
+    box-shadow: 0 8px 20px rgba(104, 90, 255, 0.4);
 }
 
 .btn-download {
     background: white;
-    color: #e67e22;
-    border: 2px solid #f39c12;
+    color: #685AFF;
+    border: 2px solid #685AFF;
     box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
 
 .btn-download:hover {
-    background: #fff5eb;
-    border-color: #e67e22;
+    background: #f0f0ff;
+    border-color: #5a4be0;
     transform: translateY(-2px);
 }
 
@@ -156,7 +156,7 @@ input[type="text"]:focus {
     padding: 20px;
     background: #fefcfb;
     border-radius: 16px;
-    border: 1px dashed #f1c40f;
+    border: 1px dashed #685AFF;
 }
 
 /* Mensajes de error elegantes */
@@ -179,8 +179,8 @@ input[type="text"]:focus {
     background: #ffffff;
     border-radius: 20px;
     padding: 15px;
-    border: 1px solid #ffe6d5;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    border: 1px solid #e0e0ff;
+    box-shadow: 0 8px 20px rgba(104, 90, 255, 0.02);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,7 +216,7 @@ input[type="text"]:focus {
     .main-header h1 {
         border-left: none;
         padding-left: 0;
-        border-top: 2px solid #e67e22;
+        border-top: 2px solid #685AFF;
         padding-top: 15px;
     }
 }
