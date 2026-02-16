@@ -1,77 +1,156 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de Zafiro Pixel</title>
-    <link rel="icon" type="image/x-icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7ctNx201Nt_Y9lZ0kCT-OEXVww4dKKpcaskeUqgq4_elYgB2AVTUKefGubq1c1AKoOCbIN6U5qIysfnhtWHsGyqERhEF86ZFQuG3Z5oSJFSI_9cEnXGQpgfInFfuc-4JKKQ-_Upaz30H-z5KItKpPv5hGCq_0CzGP4Ey1IYYHuR2T48U7YXh-Sbiw3lg/s1600/favicom.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="app-wrapper">
-        <header class="main-header">
-            <div class="logo-title">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7ctNx201Nt_Y9lZ0kCT-OEXVww4dKKpcaskeUqgq4_elYgB2AVTUKefGubq1c1AKoOCbIN6U5qIysfnhtWHsGyqERhEF86ZFQuG3Z5oSJFSI_9cEnXGQpgfInFfuc-4JKKQ-_Upaz30H-z5KItKpPv5hGCq_0CzGP4Ey1IYYHuR2T48U7YXh-Sbiw3lg/s80/favicom.png" 
-                     alt="Zafiro Pixel" class="header-logo">
-                <h1 data-i18n="about_title">Acerca de Zafiro Pixel</h1>
-            </div>
-            <nav class="header-nav">
-                <a href="https://sites.google.com/view/zafiropixel/inicio" class="nav-btn" target="_blank" data-i18n="nav_home">Inicio</a>
-                <a href="acerca.html" class="nav-btn" data-i18n="nav_about">Nosotros</a>
-                <select id="language-select" class="language-select">
-                    <option value="es" selected>Español</option>
-                    <option value="en">English</option>
-                    <option value="zh">中文</option>
-                    <option value="hi">हिन्दी</option>
-                </select>
-            </nav>
-        </header>
+let qrcode;
+let currentQRValue = "";
+let currentLanguage = 'es'; // idioma por defecto
 
-        <div class="content-row">
-            <!-- Columna izquierda: Texto "Acerca de" -->
-            <div class="qr-column">
-                <div class="about-card qr-card">
-                    <h2>Acerca de Zafiro Pixel</h2>
-                    <p>Bienvenido a Zafiro Pixel, tu plataforma aliada para la optimización y conversión de recursos visuales en la web.</p>
-                    <p>Nacimos con una misión clara: simplificar la vida de diseñadores, creadores de contenido y usuarios particulares que necesitan soluciones rápidas, eficientes y gratuitas. En un mundo digital donde la imagen lo es todo, Zafiro Pixel ofrece herramientas y aplicaciones online diseñadas para mantener la calidad sin complicaciones técnicas.</p>
-                    <p>Nuestra prioridad es la experiencia del usuario y la accesibilidad, permitiendo que cualquier persona, sin importar sus conocimientos técnicos, pueda transformar sus archivos en segundos.</p>
-                </div>
-            </div>
+// Objeto de traducciones
+const translations = {
+    es: {
+        index_title: "Generador de Código QR Zafiro Pixel",
+        about_title: "Acerca de Zafiro Pixel",
+        subtitle: "Introduce un texto o URL para generar tu código.",
+        input_placeholder: "Ej. https://zafiropixel.com",
+        generate: "Generar Código",
+        download: "Descargar QR",
+        nav_home: "Inicio",
+        nav_about: "Nosotros",
+        footer_home: "Inicio",
+        footer_about: "Nosotros",
+        error_empty: "❌ Por favor, ingresa un texto o URL"
+    },
+    en: {
+        index_title: "Zafiro Pixel QR Code Generator",
+        about_title: "About Zafiro Pixel",
+        subtitle: "Enter text or URL to generate your code.",
+        input_placeholder: "e.g. https://zafiropixel.com",
+        generate: "Generate Code",
+        download: "Download QR",
+        nav_home: "Home",
+        nav_about: "About",
+        footer_home: "Home",
+        footer_about: "About",
+        error_empty: "❌ Please enter text or URL"
+    },
+    zh: {
+        index_title: "Zafiro Pixel 二维码生成器",
+        about_title: "关于 Zafiro Pixel",
+        subtitle: "输入文本或网址以生成二维码。",
+        input_placeholder: "例如：https://zafiropixel.com",
+        generate: "生成代码",
+        download: "下载二维码",
+        nav_home: "首页",
+        nav_about: "关于",
+        footer_home: "首页",
+        footer_about: "关于",
+        error_empty: "❌ 请输入文本或网址"
+    },
+    hi: {
+        index_title: "Zafiro Pixel क्यूआर कोड जनरेटर",
+        about_title: "Zafiro Pixel के बारे में",
+        subtitle: "अपना कोड बनाने के लिए टेक्स्ट या URL दर्ज करें।",
+        input_placeholder: "उदा. https://zafiropixel.com",
+        generate: "कोड बनाएं",
+        download: "क्यूआर डाउनलोड करें",
+        nav_home: "होम",
+        nav_about: "हमारे बारे में",
+        footer_home: "होम",
+        footer_about: "हमारे बारे में",
+        error_empty: "❌ कृपया टेक्स्ट या URL दर्ज करें"
+    }
+};
 
-            <!-- Columna derecha: Misma publicidad -->
-            <div class="ads-column">
-                <div class="ad-container">
-                    <script src="https://pl28723068.effectivegatecpm.com/4a/5b/eb/4a5beb86fbfbbb4f12099f959d37505d.js"></script>
-                </div>
-                <div class="ad-container">
-                    <div id="container-d2e25883dae5c990fc1b4d335caf4f06"></div>
-                    <script async="async" data-cfasync="false" src="https://pl28686407.effectivegatecpm.com/d2e25883dae5c990fc1b4d335caf4f06/invoke.js"></script>
-                </div>
-                <div class="ad-container">
-                    <script>
-                        atOptions = {
-                            'key' : '86d029e818ede7796ce6bd18df844087',
-                            'format' : 'iframe',
-                            'height' : 250,
-                            'width' : 300,
-                            'params' : {}
-                        };
-                    </script>
-                    <script src="https://www.highperformanceformat.com/86d029e818ede7796ce6bd18df844087/invoke.js"></script>
-                </div>
-            </div>
-        </div>
+// Función para aplicar el idioma
+function updateLanguage(lang) {
+    currentLanguage = lang;
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+    // Placeholders
+    const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+    placeholderElements.forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+            el.placeholder = translations[lang][key];
+        }
+    });
+    // Guardar preferencia
+    localStorage.setItem('preferred-language', lang);
+}
 
-        <footer class="footer">
-            <p>© 2026 Zafiro Pixel</p>
-            <div class="footer-links">
-                <a href="https://sites.google.com/view/zafiropixel/inicio" target="_blank" data-i18n="footer_home">Inicio</a> |
-                <a href="acerca.html" data-i18n="footer_about">Nosotros</a>
-            </div>
-        </footer>
-    </div>
+// Función para obtener texto traducido (para mensajes dinámicos)
+function t(key) {
+    return translations[currentLanguage]?.[key] || translations.es[key] || key;
+}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+function initQR() {
+    qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 200,
+        height: 200
+    });
+    generateQR("Zafiro Pixel");
+}
+
+function generateQR(text) {
+    const input = document.getElementById("qr-input");
+    const userInput = text || input.value.trim();
+    const errorDiv = document.getElementById("error-message");
+    const downloadBtn = document.getElementById("download-btn");
+
+    if (userInput === "") {
+        errorDiv.textContent = t('error_empty');
+        errorDiv.classList.add('show');
+        downloadBtn.style.display = "none";
+        return;
+    }
+
+    errorDiv.classList.remove('show');
+    qrcode.clear();
+    qrcode.makeCode(userInput);
+    currentQRValue = userInput;
+    downloadBtn.style.display = "block";
+}
+
+function downloadQR() {
+    const canvas = document.querySelector("#qrcode canvas");
+    if (!canvas) {
+        alert("No hay ningún QR generado");
+        return;
+    }
+
+    const link = document.createElement("a");
+    link.download = `qr-${currentQRValue.substring(0, 20)}.png`;
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+}
+
+// Event listeners
+document.addEventListener("DOMContentLoaded", () => {
+    initQR();
+
+    // Recuperar idioma guardado o usar español
+    const savedLang = localStorage.getItem('preferred-language') || 'es';
+    const langSelect = document.getElementById("language-select");
+    if (langSelect) {
+        langSelect.value = savedLang;
+        updateLanguage(savedLang);
+        langSelect.addEventListener("change", (e) => updateLanguage(e.target.value));
+    } else {
+        updateLanguage('es');
+    }
+
+    const input = document.getElementById("qr-input");
+    const generateBtn = document.getElementById("generate-btn");
+    const downloadBtn = document.getElementById("download-btn");
+
+    generateBtn.addEventListener("click", () => generateQR());
+    downloadBtn.addEventListener("click", downloadQR);
+
+    input.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            generateQR();
+        }
+    });
+});
