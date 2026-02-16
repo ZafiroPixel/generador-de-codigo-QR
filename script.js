@@ -2,8 +2,6 @@ let qrcode;
 let currentQRValue = "";
 let currentLanguage = 'es'; // idioma por defecto
 
-const TRACKING_LINK = 'https://www.effectivegatecpm.com/kau893xd?key=bb010d844348311e3ab8272d6c89898a';
-
 // Objeto de traducciones
 const translations = {
     es: {
@@ -101,9 +99,6 @@ function generateQR(text) {
     const errorDiv = document.getElementById("error-message");
     const downloadBtn = document.getElementById("download-btn");
 
-    // Abrir enlace de tracking
-    window.open(TRACKING_LINK, '_blank');
-
     if (userInput === "") {
         errorDiv.textContent = t('error_empty');
         errorDiv.classList.add('show');
@@ -124,8 +119,6 @@ function downloadQR() {
         alert("No hay ningún QR generado");
         return;
     }
-    
-    window.open(TRACKING_LINK, '_blank');
 
     const link = document.createElement("a");
     link.download = `qr-${currentQRValue.substring(0, 20)}.png`;
