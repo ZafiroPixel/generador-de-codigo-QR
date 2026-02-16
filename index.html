@@ -4,30 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Código QR Zafiro Pixel</title>
-    <!-- Favicon (verificar URL) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7ctNx201Nt_Y9lZ0kCT-OEXVww4dKKpcaskeUqgq4_elYgB2AVTUKefGubq1c1AKoOCbIN6U5qIysfnhtWHsGyqERhEF86ZFQuG3Z5oSJFSI_9cEnXGQpgfInFfuc-4JKKQ-_Upaz30H-z5KItKpPv5hGCq_0CzGP4Ey1IYYHuR2T48U7YXh-Sbiw3lg/s1600/favicom.png">
     <link rel="stylesheet" href="style.css">
-    <!-- Banner 1 (derecha) -->
-    <script>
-        atOptions = {
-            'key': '86d029e818ede7796ce6bd18df844087',
-            'format': 'iframe',
-            'height': 250,
-            'width': 300,
-            'params': {}
-        };
-    </script>
-    <script src="https://www.highperformanceformat.com/86d029e818ede7796ce6bd18df844087/invoke.js"></script>
-    <!-- Banner 2 (derecha) -->
-    <script async="async" data-cfasync="false" src="https://pl28686407.effectivegatecpm.com/d2e25883dae5c990fc1b4d335caf4f06/invoke.js"></script>
 </head>
 <body>
     <div class="app-wrapper">
-        <!-- Header superior (dentro del contenedor principal) -->
+        <!-- Header superior con navegación e idiomas -->
         <header class="main-header">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7ctNx201Nt_Y9lZ0kCT-OEXVww4dKKpcaskeUqgq4_elYgB2AVTUKefGubq1c1AKoOCbIN6U5qIysfnhtWHsGyqERhEF86ZFQuG3Z5oSJFSI_9cEnXGQpgfInFfuc-4JKKQ-_Upaz30H-z5KItKpPv5hGCq_0CzGP4Ey1IYYHuR2T48U7YXh-Sbiw3lg/s80/favicom.png" 
-                 alt="Zafiro Pixel" class="header-logo">
-            <h1>Generador de Código QR Zafiro Pixel</h1>
+            <div class="logo-title">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7ctNx201Nt_Y9lZ0kCT-OEXVww4dKKpcaskeUqgq4_elYgB2AVTUKefGubq1c1AKoOCbIN6U5qIysfnhtWHsGyqERhEF86ZFQuG3Z5oSJFSI_9cEnXGQpgfInFfuc-4JKKQ-_Upaz30H-z5KItKpPv5hGCq_0CzGP4Ey1IYYHuR2T48U7YXh-Sbiw3lg/s80/favicom.png" 
+                     alt="Zafiro Pixel" class="header-logo">
+                <h1 data-i18n="index_title">Generador de Código QR Zafiro Pixel</h1>
+            </div>
+            <nav class="header-nav">
+                <a href="https://sites.google.com/view/zafiropixel/inicio" class="nav-btn" target="_blank" data-i18n="nav_home">Inicio</a>
+                <a href="acerca.html" class="nav-btn" data-i18n="nav_about">Nosotros</a>
+                <select id="language-select" class="language-select">
+                    <option value="es" selected>Español</option>
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </nav>
         </header>
 
         <!-- Contenido principal: 2 columnas -->
@@ -35,31 +34,50 @@
             <!-- Columna izquierda: Generador QR -->
             <div class="qr-column">
                 <div class="qr-card">
-                    <p class="subtitle">Introduce un texto o URL para generar tu código.</p>
+                    <p class="subtitle" data-i18n="subtitle">Introduce un texto o URL para generar tu código.</p>
                     
-                    <input type="text" id="qr-input" placeholder="Ej. https://zafiropixel.com" value="Escribe aquí">
-                    <button id="generate-btn" class="btn-primary">Generar Código</button>
-                    <button id="download-btn" class="btn-download" style="display: none;">Descargar QR</button>
+                    <input type="text" id="qr-input" data-i18n-placeholder="input_placeholder" placeholder="Ej. https://zafiropixel.com" value="Escribe aquí">
+                    <button id="generate-btn" class="btn-primary" data-i18n="generate">Generar Código</button>
+                    <button id="download-btn" class="btn-download" style="display: none;" data-i18n="download">Descargar QR</button>
 
                     <div id="qrcode"></div>
                     <div id="error-message" class="error-message"></div>
                 </div>
             </div>
 
-            <!-- Columna derecha: Banners publicitarios -->
+            <!-- Columna derecha: Banners publicitarios (nuevos scripts) -->
             <div class="ads-column">
+                <!-- Banner 1 -->
+                <div class="ad-container">
+                    <script src="https://pl28723068.effectivegatecpm.com/4a/5b/eb/4a5beb86fbfbbb4f12099f959d37505d.js"></script>
+                </div>
+                <!-- Banner 2 (con contenedor propio) -->
                 <div class="ad-container">
                     <div id="container-d2e25883dae5c990fc1b4d335caf4f06"></div>
+                    <script async="async" data-cfasync="false" src="https://pl28686407.effectivegatecpm.com/d2e25883dae5c990fc1b4d335caf4f06/invoke.js"></script>
                 </div>
-                <!-- Espacio para segundo banner (el primer script ya se cargó en <head>) -->
+                <!-- Banner 3 -->
                 <div class="ad-container">
-                    <!-- El primer banner se insertará automáticamente aquí mediante el script -->
+                    <script>
+                        atOptions = {
+                            'key' : '86d029e818ede7796ce6bd18df844087',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/86d029e818ede7796ce6bd18df844087/invoke.js"></script>
                 </div>
             </div>
         </div>
 
         <footer class="footer">
             <p>© 2026 Zafiro Pixel</p>
+            <div class="footer-links">
+                <a href="https://sites.google.com/view/zafiropixel/inicio" target="_blank" data-i18n="footer_home">Inicio</a> |
+                <a href="acerca.html" data-i18n="footer_about">Nosotros</a>
+            </div>
         </footer>
     </div>
 
