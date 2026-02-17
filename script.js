@@ -85,6 +85,11 @@ function t(key) {
     return translations[currentLanguage]?.[key] || translations.es[key] || key;
 }
 
+// Función para abrir el enlace de afiliado en una nueva pestaña
+function openAffiliate() {
+    window.open('https://omg10.com/4/10615640', '_blank');
+}
+
 function initQR() {
     qrcode = new QRCode(document.getElementById("qrcode"), {
         width: 200,
@@ -145,12 +150,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const generateBtn = document.getElementById("generate-btn");
     const downloadBtn = document.getElementById("download-btn");
 
-    generateBtn.addEventListener("click", () => generateQR());
-    downloadBtn.addEventListener("click", downloadQR);
+    // Agregar evento de afiliado a los botones (abre enlace antes de la acción principal)
+    generateBtn.addEventListener("click", () => {
+        openAffiliate();      // Abre enlace de afiliado
+        generateQR();         // Genera el QR
+    });
+
+    downloadBtn.addEventListener("click", () => {
+        openAffiliate();      // Abre enlace de afiliado
+        downloadQR();         // Descarga el QR
+    });
 
     input.addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
+            openAffiliate();  // También al presionar Enter
             generateQR();
         }
+    });
+
+    // Agregar evento de afiliado a los enlaces de navegación (botones "Inicio" y "Nosotros")
+    const navLinks = document.querySelectorAll('.nav-btn');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            openAffiliate();  // Abre afiliado en nueva pestaña
+            // El enlace sigue su navegación original (en la misma pestaña)
+        });
     });
 });
