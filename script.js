@@ -150,25 +150,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const generateBtn = document.getElementById("generate-btn");
     const downloadBtn = document.getElementById("download-btn");
 
-    // Agregar evento de afiliado a los botones (abre enlace antes de la acción principal)
+    // Botón generar: abre afiliado y genera QR
     generateBtn.addEventListener("click", () => {
         openAffiliate();      // Abre enlace de afiliado
         generateQR();         // Genera el QR
     });
 
+    // Botón descargar: SOLO descarga (sin afiliado)
     downloadBtn.addEventListener("click", () => {
-        openAffiliate();      // Abre enlace de afiliado
         downloadQR();         // Descarga el QR
     });
 
+    // Evento Enter en el input: genera QR sin afiliado (ya no se abre publicidad)
     input.addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
-            openAffiliate();  // También al presionar Enter
-            generateQR();
+            generateQR();     // Solo genera el QR
         }
     });
 
-    // Agregar evento de afiliado a los enlaces de navegación (botones "Inicio" y "Nosotros")
+    // Enlaces de navegación: mantienen el afiliado (igual que antes)
     const navLinks = document.querySelectorAll('.nav-btn');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
