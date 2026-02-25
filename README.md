@@ -1,2 +1,2 @@
-# generador-de-codigo-QR
-Generador de código QR
+# generador-de-cartones-de-bingo
+Generador de cartones de bingo
