@@ -85,11 +85,6 @@ function t(key) {
     return translations[currentLanguage]?.[key] || translations.es[key] || key;
 }
 
-// Función para abrir el enlace de afiliado en una nueva pestaña
-function openAffiliate() {
-    window.open('https://omg10.com/4/10615640', '_blank');
-}
-
 function initQR() {
     qrcode = new QRCode(document.getElementById("qrcode"), {
         width: 200,
