@@ -94,7 +94,7 @@ body {
     box-shadow: 0 0 0 3px rgba(104, 90, 255, 0.1);
 }
 
-/* Contenido a dos columnas */
+/* Contenido a dos columnas (ahora solo la columna principal) */
 .content-row {
     display: flex;
     gap: 30px;
@@ -104,14 +104,6 @@ body {
 .qr-column {
     flex: 1 1 60%;
     min-width: 300px;
-}
-
-.ads-column {
-    flex: 1 1 35%;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 /* Tarjeta del generador (plateado elegante) */
@@ -234,25 +226,6 @@ input[type="text"]:focus {
 
 .error-message.show {
     display: block;
-}
-
-/* Contenedores de anuncios */
-.ad-container {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 15px;
-    border: 1px solid #e0e0ff;
-    box-shadow: 0 8px 20px rgba(104, 90, 255, 0.02);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 250px;
-    overflow: hidden;
-}
-
-.ad-container iframe {
-    border-radius: 12px;
-    max-width: 100%;
 }
 
 /* Footer */
