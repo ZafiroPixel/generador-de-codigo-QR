@@ -150,9 +150,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const generateBtn = document.getElementById("generate-btn");
     const downloadBtn = document.getElementById("download-btn");
 
-    // Botón generar: abre afiliado y genera QR
+    // Botón generar: genera QR
     generateBtn.addEventListener("click", () => {
-        openAffiliate();      // Abre enlace de afiliado
         generateQR();         // Genera el QR
     });
 
@@ -161,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         downloadQR();         // Descarga el QR
     });
 
-    // Evento Enter en el input: genera QR sin afiliado (ya no se abre publicidad)
+    // Evento Enter en el input: genera QR sin afiliado 
     input.addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
             generateQR();     // Solo genera el QR
@@ -172,7 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll('.nav-btn');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            openAffiliate();  // Abre afiliado en nueva pestaña
             // El enlace sigue su navegación original (en la misma pestaña)
         });
     });
